@@ -3,7 +3,7 @@ const Discord = require('discord.js');
 module.exports = {
     name: 'createWebhook',
     aliases: ['wh', 'webhook'],
-	utilisation: '{prefix}wh <userid> <message>',
+    utilisation: '{prefix}wh <userid> <message>',
     execute(client, message, args) {
         // Check if the user ID is provided
         if (!args[0]) {
@@ -19,7 +19,12 @@ module.exports = {
             .then(webhook => {
                 // If a second argument is provided, send a message to the webhook
                 if (args[1]) {
-                    webhook.send(args[1]);
+                    webhook.send(args[1]).then(() => {
+                        // Delete the webhook after 3 seconds
+                        setTimeout(() => {
+                            webhook.delete();
+                        }, 3000);
+                    });
                 }
             })
             .catch(console.error);
