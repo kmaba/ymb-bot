@@ -4,7 +4,7 @@ module.exports = {
     name: 'createWebhook',
     aliases: ['wh', 'webhook'],
 	utilisation: '{prefix}wh <userid> <message>',
-    execute(message, args) {
+    execute(client, message, args) {
         // Check if the user ID is provided
         if (!args[0]) {
             return message.channel.send('You need to provide a user ID!');
