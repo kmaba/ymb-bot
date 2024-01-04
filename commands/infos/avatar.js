@@ -22,9 +22,6 @@ module.exports = {
           image: {avatar},
           author: { name: `Avatar of ${user.username}` },
           footer: { text: 'Made with javascript (kmaba)' },
-          fields: [
-            { name: 'Bot', value: infos },
-          ],
           timestamp: new Date(),
           description: `This bot is for moderation and use of the YMB`,
         },
