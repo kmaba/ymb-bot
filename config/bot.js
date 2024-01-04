@@ -18,9 +18,9 @@ module.exports = {
     ),
     prefix: "-",
     status: "dnd",
-    activity: {
-      name: "halaqa",
-      type: "LISTENING",
-    },
+  },
+  activity: {
+    name: "halaqa",
+    type: "LISTENING",
   },
 };
