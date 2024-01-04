@@ -16,15 +16,7 @@ module.exports = {
        avatar = getUserAvatar(user);
 
        message.channel.send({
-        embed: {
-          color: 'ORANGE',
-          url: {avatar},
-          image: {avatar},
-          author: { name: `Avatar of ${user.username}` },
-          footer: { text: 'Made with javascript (kmaba)' },
-          timestamp: new Date(),
-          description: `This bot is for moderation and use of the YMB`,
-        },
+        avatar,
       });
    }
 }
