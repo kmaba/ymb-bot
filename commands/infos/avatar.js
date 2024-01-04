@@ -15,8 +15,13 @@ module.exports = {
 
        avatar = getUserAvatar(user);
 
-       message.channel.send({
-        avatar,
+       message.channel.send({embed: {
+              color: 3447003,
+                title: `${user.username}'s Avatar`,
+                image: {
+                    url: avatar
+                }
+            }
       });
    }
 }
