@@ -15,14 +15,20 @@ module.exports = {
 
        avatar = getUserAvatar(user);
 
-
-       let embed = new discord.MessageEmbed()
-           .setTitle(`Avatar of ${user.username}`)
-           .setURL(avatar)
-           .setImage(avatar)
-           .setColor('RANDOM')
-           .setDescription('-ymb bot-')
-       message.channel.send(embed)
+       message.channel.send({
+        embed: {
+          color: 'ORANGE',
+          url: {avatar},
+          image: {avatar},
+          author: { name: `Avatar of ${user.username}` },
+          footer: { text: 'Made with javascript (kmaba)' },
+          fields: [
+            { name: 'Bot', value: infos },
+          ],
+          timestamp: new Date(),
+          description: `This bot is for moderation and use of the YMB`,
+        },
+      });
    }
 }
 

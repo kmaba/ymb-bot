@@ -11,6 +11,13 @@ client.config = require('./config/bot');
 client.emotes = client.config.emojis;
 client.commands = new discord.Collection();
 
+client.user.setPresence({
+    status: 'dnd', 
+    activity: {
+        name: 'halaqa', 
+        type: 'LISTENING',
+    },
+});
 
 
 fs.readdirSync('./commands').forEach(dirs => {
