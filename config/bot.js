@@ -18,5 +18,6 @@ module.exports = {
     ),
     prefix: "-",
     status: "dnd",
+    activity: "Listening to the halaqa",
   },
 };
