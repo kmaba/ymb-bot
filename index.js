@@ -32,3 +32,4 @@ for (const file of events) {
 
 
 client.login(client.config.discord.token);
+client.user.setActivity('halaqa', { type: 'LISTENING' });
