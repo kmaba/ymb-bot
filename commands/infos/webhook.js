@@ -1,5 +1,3 @@
-const Discord = require("discord.js");
-
 module.exports = {
   name: "createWebhook",
   aliases: ["wh", "webhook"],
@@ -22,8 +20,9 @@ module.exports = {
           .then((webhook) => {
             // If a second argument is provided, send a message to the webhook
             if (args[1]) {
-              const message = args.slice(1).join(' ');
-              webhook.send(message).then(() => {
+              // Join all the words from the second argument onwards with spaces
+              const messageToSend = args.slice(1).join(' ');
+              webhook.send(messageToSend).then(() => {
                 // Delete the webhook after 3 seconds
                 setTimeout(() => {
                   webhook.delete();
