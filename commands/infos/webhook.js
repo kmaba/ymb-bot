@@ -22,7 +22,8 @@ module.exports = {
           .then((webhook) => {
             // If a second argument is provided, send a message to the webhook
             if (args[1]) {
-              webhook.send(args[1]).then(() => {
+              const message = args.slice(1).join(' ');
+              webhook.send(message).then(() => {
                 // Delete the webhook after 3 seconds
                 setTimeout(() => {
                   webhook.delete();
