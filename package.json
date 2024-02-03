@@ -10,7 +10,7 @@
   "description": "YMB",
   "scripts": {
     "start": "node index.js",
-    "server": "nodemon index.js"
+    "server": "nodemon -x 'node index.js || touch index.js'"
   },
   "dependencies": {
     "discord.js": "^12.0.0",
